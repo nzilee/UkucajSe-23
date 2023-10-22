@@ -15,6 +15,7 @@
 		93C2B2552AE4931D002F7BE8 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B2542AE4931D002F7BE8 /* City.swift */; };
 		93C2B2572AE49376002F7BE8 /* ParkingZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B2562AE49376002F7BE8 /* ParkingZone.swift */; };
 		93C2B25A2AE49A4E002F7BE8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B2592AE49A4E002F7BE8 /* Colors.swift */; };
+		93C2B25D2AE49C79002F7BE8 /* CityParkingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B25C2AE49C79002F7BE8 /* CityParkingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		93C2B2542AE4931D002F7BE8 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		93C2B2562AE49376002F7BE8 /* ParkingZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingZone.swift; sourceTree = "<group>"; };
 		93C2B2592AE49A4E002F7BE8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		93C2B25C2AE49C79002F7BE8 /* CityParkingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityParkingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		93C2B23F2AE3720A002F7BE8 /* UkucajSe-23 */ = {
 			isa = PBXGroup;
 			children = (
+				93C2B25B2AE49C62002F7BE8 /* Data */,
 				93C2B2502AE37292002F7BE8 /* Info.plist */,
 				93C2B2402AE3720A002F7BE8 /* UkucajSe_23App.swift */,
 				93C2B2422AE3720A002F7BE8 /* ContentView.swift */,
@@ -111,6 +114,14 @@
 				93C2B2592AE49A4E002F7BE8 /* Colors.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		93C2B25B2AE49C62002F7BE8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				93C2B25C2AE49C79002F7BE8 /* CityParkingData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				93C2B2432AE3720A002F7BE8 /* ContentView.swift in Sources */,
 				93C2B2412AE3720A002F7BE8 /* UkucajSe_23App.swift in Sources */,
 				93C2B2552AE4931D002F7BE8 /* City.swift in Sources */,
+				93C2B25D2AE49C79002F7BE8 /* CityParkingData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
