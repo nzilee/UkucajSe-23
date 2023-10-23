@@ -14,48 +14,59 @@ struct ZoneButtonView: View {
     let title: String
     let price: Int
     let color: Color
+    let zone: ParkingZone
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 16)
-                .fill(Color.beige)
-            
-            VStack {
-                Spacer()
-                HStack {
-                    Text(String(price))
-                        .font(.lexendRegLarge)
-                        .minimumScaleFactor(0.7)
-                    
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("RSD")
-                            .foregroundColor(.secondary)
-                        Text(",00")
-                            
-                    }
-                    .font(.lexendRegTitle2)
-                }
-                .padding([.horizontal, .top], 10)
+        
+        Button {
+            vm.selectParkingZone(parkingZone: zone)
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color.beige)
                 
-                Spacer()
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 6)
-                        .fill(color.opacity(0.3))
-                    
-                    Text(title)
-                        .font(.lexendRegTitle)
+                VStack {
+                    Spacer()
+                    HStack {
+                        Text(String(price))
+                            .font(.lexendRegLarge)
+                            .minimumScaleFactor(0.7)
+                            .foregroundColor(.primary)
                         
-                        .minimumScaleFactor(0.7)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(color)
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("RSD")
+                                .foregroundColor(.secondary)
+                            Text(",00")
+                                .foregroundColor(.primary)
+                                
+                        }
+                        .font(.lexendRegTitle2)
+                    }
+                    .padding([.horizontal, .top], 10)
                     
+                    Spacer()
                     
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(color.opacity(0.3))
+                        
+                        Text(title)
+                            .font(.lexendRegTitle)
+                            
+                            .minimumScaleFactor(0.7)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(color)
+                        
+                        
+                    }
+                    .padding([.horizontal, .bottom], 10)
                 }
-                .padding([.horizontal, .bottom], 10)
             }
+            .frame(width: 160, height: 160)
+
         }
-        .frame(width: 160, height: 160)
+        
+        
     }
 }
 
@@ -63,7 +74,11 @@ struct ZoneButtonView_Previews: PreviewProvider {
     static var previews: some View {
         ZoneButtonView(title: "Dnevna Karta",
                        price: 450,
-                       color: .brightBlue)
+                       color: .brightBlue,
+                       zone: ParkingZone(name: "II",
+                                         zoneNumber: "123",
+                                         price: 50,
+                                         color: .blue))
             .environmentObject(CityViewModel())
     }
 }
