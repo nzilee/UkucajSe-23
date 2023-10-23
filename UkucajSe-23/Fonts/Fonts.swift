@@ -1,8 +1,8 @@
 //
 //  Fonts.swift
-//  UkucajSe-Final
+//  UkucajSe-23
 //
-//  Created by Nikola Zivkovic on 10/21/23.
+//  Created by Nikola Zivkovic on 10/23/23.
 //
 
 import Foundation

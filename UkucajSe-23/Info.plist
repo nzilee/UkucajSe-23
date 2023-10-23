@@ -5,7 +5,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>LexendExa-Regular.ttf</string>
-		<string>LexendExa-Medium.ttf</string>
 	</array>
 </dict>
 </plist>
