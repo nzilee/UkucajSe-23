@@ -18,7 +18,7 @@ class CityViewModel: ObservableObject {
     init() {
         let cities = CityParkingData.shared.cities
         self.cities = cities
-        self.city = cities[0]
+        self.city = cities[1]
     }
     
     func selectCity(city: City) {

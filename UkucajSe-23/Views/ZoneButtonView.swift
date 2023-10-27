@@ -16,6 +16,8 @@ struct ZoneButtonView: View {
     let color: Color
     let zone: ParkingZone
     
+    let size: CGFloat = UIScreen.main.bounds.width * 0.4
+    
     var body: some View {
         
         Button {
@@ -52,17 +54,18 @@ struct ZoneButtonView: View {
                         
                         Text(title)
                             .font(.lexendRegTitle)
-                            
-                            .minimumScaleFactor(0.7)
+                            .lineLimit(0)
+                            .minimumScaleFactor(0.3)
                             .multilineTextAlignment(.center)
                             .foregroundColor(color)
+                            .padding()
                         
                         
                     }
                     .padding([.horizontal, .bottom], 10)
                 }
             }
-            .frame(width: 160, height: 160)
+            .frame(width: size, height: size)
 
         }
         
@@ -72,7 +75,7 @@ struct ZoneButtonView: View {
 
 struct ZoneButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ZoneButtonView(title: "Dnevna Karta",
+        ZoneButtonView(title: "Extra Zona",
                        price: 450,
                        color: .brightBlue,
                        zone: ParkingZone(name: "II",

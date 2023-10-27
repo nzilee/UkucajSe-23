@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		933EE1FD2AE6F9480085C0BC /* LexendExa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 933EE1FC2AE6F9480085C0BC /* LexendExa-Regular.ttf */; };
 		933EE1FF2AE6F9640085C0BC /* LexendExa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 933EE1FE2AE6F9640085C0BC /* LexendExa-Medium.ttf */; };
+		933EE2012AE70B300085C0BC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933EE2002AE70B300085C0BC /* MainView.swift */; };
 		93C2B2412AE3720A002F7BE8 /* UkucajSe_23App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B2402AE3720A002F7BE8 /* UkucajSe_23App.swift */; };
 		93C2B2432AE3720A002F7BE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B2422AE3720A002F7BE8 /* ContentView.swift */; };
 		93C2B2452AE3720D002F7BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C2B2442AE3720D002F7BE8 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		933EE1FC2AE6F9480085C0BC /* LexendExa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendExa-Regular.ttf"; sourceTree = "<group>"; };
 		933EE1FE2AE6F9640085C0BC /* LexendExa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendExa-Medium.ttf"; sourceTree = "<group>"; };
+		933EE2002AE70B300085C0BC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		93C2B23D2AE3720A002F7BE8 /* UkucajSe-23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UkucajSe-23.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C2B2402AE3720A002F7BE8 /* UkucajSe_23App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkucajSe_23App.swift; sourceTree = "<group>"; };
 		93C2B2422AE3720A002F7BE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				93C2B27C2AE6F113002F7BE8 /* ZoneButtonView.swift */,
+				933EE2002AE70B300085C0BC /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				93C2B2572AE49376002F7BE8 /* ParkingZone.swift in Sources */,
 				93C2B25A2AE49A4E002F7BE8 /* Colors.swift in Sources */,
 				93C2B27D2AE6F114002F7BE8 /* ZoneButtonView.swift in Sources */,
+				933EE2012AE70B300085C0BC /* MainView.swift in Sources */,
 				93C2B2432AE3720A002F7BE8 /* ContentView.swift in Sources */,
 				93C2B2412AE3720A002F7BE8 /* UkucajSe_23App.swift in Sources */,
 				93C2B2552AE4931D002F7BE8 /* City.swift in Sources */,
@@ -359,6 +363,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UkucajSe-23/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = UkucajSe;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -390,6 +395,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UkucajSe-23/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = UkucajSe;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
