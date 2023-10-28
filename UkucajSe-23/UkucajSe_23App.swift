@@ -11,7 +11,8 @@ import SwiftUI
 struct UkucajSe_23App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(CityViewModel())
         }
     }
 }

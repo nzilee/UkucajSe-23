@@ -25,24 +25,25 @@ struct MainView: View {
             regPlateTextField
             
             cityPickerButton
-            
-            zoneButtons
-                .padding(.top)
-            
-            Spacer()
-            
-            payParkingButton
-            
-//            Spacer()
-            
-            payManuallyButton
-            
+                       
+            ZStack {
+                MapView()
+                
+                VStack {
+                    if vm.showZoneButtons {
+                        zoneButtons
+                            .padding([.horizontal, .top])
+                    }
+                    Spacer()
+                    payParkingButton
+                        .padding(.horizontal)
+                    //            Spacer()
+                    payManuallyButton
+                }
+            }
+            .cornerRadius(8)
         }
-        .ignoresSafeArea(edges: .bottom)
         .padding(.horizontal)
-        
-        
-        
     }
 }
 
@@ -98,7 +99,7 @@ extension MainView {
     
     private var cityPickerButton: some View {
         Button {
-        
+            
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 14)
@@ -118,7 +119,7 @@ extension MainView {
     
     private var payParkingButton: some View {
         Button {
-            
+            vm.toggleZoneButtons()
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 16)
@@ -128,6 +129,7 @@ extension MainView {
                     .font(.lexendMedTitle2)
                     .foregroundColor(.primary)
             }
+//            .shadow(color: .black.opacity(0.2), radius: 15, x: 0, y: 0)
             .frame(height: 62)
         }
 
@@ -139,14 +141,15 @@ extension MainView {
         } label: {
             ZStack {
                 Rectangle()
-                    .fill(.orange)
-//                    .fill(Material.ultraThinMaterial)
+//                    .fill(.orange)
+                    .fill(Material.ultraThinMaterial)
                 
                 Text("Uplati sam")
                     .font(.lexendRegFootnote)
                     .foregroundColor(.primary)
             }
-            .frame(width: UIScreen.main.bounds.width, height: 62)
+            .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 0)
+            .frame(height: 62)
         }
 
     }

@@ -13,7 +13,8 @@ class CityViewModel: ObservableObject {
     @Published var cities: [City]
     @Published var city: City
     @Published var parkingZone: ParkingZone? = nil
-    @Published var showCityMenu: Bool = false
+    @Published var showCityList: Bool = false
+    @Published var showZoneButtons: Bool = false
     
     init() {
         let cities = CityParkingData.shared.cities
@@ -33,6 +34,12 @@ class CityViewModel: ObservableObject {
 //        withAnimation(.easeInOut) {
 //            self.showCityMenu.toggle()
 //        }
-        self.showCityMenu.toggle()
+    }
+    
+    func toggleZoneButtons() {
+        withAnimation(.linear) {
+            self.showZoneButtons.toggle()
+        }
+//        self.showZoneButtons.toggle()
     }
 }
