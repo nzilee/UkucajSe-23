@@ -30,10 +30,10 @@ class CityViewModel: ObservableObject {
         self.parkingZone = parkingZone
     }
     
-    func toggleCityMenu() {
-//        withAnimation(.easeInOut) {
-//            self.showCityMenu.toggle()
-//        }
+    func toggleCityList() {
+        withAnimation(.easeInOut) {
+            self.showCityList.toggle()
+        }
     }
     
     func toggleZoneButtons() {

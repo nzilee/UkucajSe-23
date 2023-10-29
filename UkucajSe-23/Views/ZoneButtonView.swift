@@ -33,13 +33,13 @@ struct ZoneButtonView: View {
                         Text(String(price))
                             .font(.lexendRegLarge)
                             .minimumScaleFactor(0.7)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.black)
                         
                         VStack(alignment: .leading, spacing: 0) {
                             Text("RSD")
-                                .foregroundColor(.secondary)
+                                .foregroundColor(.gray.opacity(0.7))
                             Text(",00")
-                                .foregroundColor(.primary)
+                                .foregroundColor(.black)
                                 
                         }
                         .font(.lexendRegTitle2)

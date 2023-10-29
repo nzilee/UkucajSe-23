@@ -28,22 +28,36 @@ struct MainView: View {
                        
             ZStack {
                 MapView()
-                
-                VStack {
+                ZStack {
+                    
                     if vm.showZoneButtons {
-                        zoneButtons
-                            .padding([.horizontal, .top])
+//                        Color.gray
+//                            .opacity(0.6)
+//                            .blur(radius: 10)
+
+                        VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
                     }
-                    Spacer()
-                    payParkingButton
-                        .padding(.horizontal)
-                    //            Spacer()
-                    payManuallyButton
+                    
+                    VStack {
+                        if vm.showZoneButtons {
+                            zoneButtons
+                                .padding([.horizontal, .top])
+                        }
+                        Spacer()
+                        payParkingButton
+                            .padding(.horizontal)
+                        //            Spacer()
+                        payManuallyButton
+                    }
                 }
             }
             .cornerRadius(8)
         }
         .padding(.horizontal)
+        .ignoresSafeArea(.keyboard, edges: .vertical)
+        .sheet(isPresented: $vm.showCityList, onDismiss: nil) {
+            CityListView()
+        }
     }
 }
 
@@ -55,25 +69,9 @@ struct MainView_Previews: PreviewProvider {
 }
 
 extension MainView {
-    private var zoneButtons: some View {
-        //        ScrollView(.vertical, showsIndicators: false) {
-        LazyVGrid(columns: columns,
-                  alignment: .center,
-                  spacing: UIScreen.main.bounds.width * 0.07) {
-            ForEach(vm.city.parkingZones) { zone in
-                ZoneButtonView(title: zone.name,
-                               price: zone.price,
-                               color: zone.color,
-                               zone: zone)
-            }
-        }
-                  .padding(.horizontal)
-        //        }
-        //        .padding(.top)
-    }
     
     private var dayAndTime: some View {
-        HStack {
+        HStack(alignment: .lastTextBaseline) {
             VStack(alignment: .leading) {
                 Text(Date.now, format: .dateTime.weekday(.wide))
                     .font(.lexendRegCaption)
@@ -82,8 +80,22 @@ extension MainView {
                     .font(.lexendRegTitle)
                     .foregroundColor(.primary)
             }
+//            .background(.red)
             Spacer()
+            
+            HStack(spacing: 15) {
+                Text(Image(systemName: "gear"))
+                    .font(.title2)
+                    .foregroundColor(.brightPink.opacity(0.7))
+                Text(Image(systemName: "car"))
+                    .font(.title2)
+                    .foregroundColor(.brightPink.opacity(0.7))
+                Text(Image(systemName: "car.top.radiowaves.rear.right"))
+                    .font(.title2)
+                    .foregroundColor(.brightPink.opacity(0.7))
+            }
         }
+//        .background(.orange)
     }
     
     private var regPlateTextField: some View {
@@ -93,13 +105,14 @@ extension MainView {
             TextField("BG123AA", text: $regPlate)
                 .font(.lexendRegTitle)
                 .padding(.horizontal)
+                .multilineTextAlignment(.center)
         }
         .frame(width: .infinity, height: 60)
     }
     
     private var cityPickerButton: some View {
         Button {
-            
+            vm.toggleCityList()
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 14)
@@ -114,6 +127,23 @@ extension MainView {
                 .padding(.leading)
             }
             .frame(height: 60)
+        }
+    }
+    
+    private var zoneButtons: some View {
+        //        ScrollView(.vertical, showsIndicators: false) {
+        GeometryReader { proxy in
+            LazyVGrid(columns: columns,
+                      alignment: .center,
+                      spacing: UIScreen.main.bounds.width * 0.07) {
+                ForEach(vm.city.parkingZones) { zone in
+                    ZoneButtonView(title: zone.name,
+                                   price: zone.price,
+                                   color: zone.color,
+                                   zone: zone)
+                }
+            }
+                      .padding(.horizontal)
         }
     }
     
@@ -132,7 +162,6 @@ extension MainView {
 //            .shadow(color: .black.opacity(0.2), radius: 15, x: 0, y: 0)
             .frame(height: 62)
         }
-
     }
     
     private var payManuallyButton: some View {
@@ -151,7 +180,5 @@ extension MainView {
             .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 0)
             .frame(height: 62)
         }
-
     }
-    
 }
