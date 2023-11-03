@@ -34,7 +34,6 @@ struct MainView: View {
 //                        Color.gray
 //                            .opacity(0.6)
 //                            .blur(radius: 10)
-
                         VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
                     }
                     
@@ -46,7 +45,6 @@ struct MainView: View {
                         Spacer()
                         payParkingButton
                             .padding(.horizontal)
-                        //            Spacer()
                         payManuallyButton
                     }
                 }
@@ -55,6 +53,9 @@ struct MainView: View {
         }
         .padding(.horizontal)
         .ignoresSafeArea(.keyboard, edges: .vertical)
+        .onAppear{
+            vm.getCurrentHourAndMinute()
+        }
         .sheet(isPresented: $vm.showCityList, onDismiss: nil) {
             CityListView()
         }
@@ -76,7 +77,7 @@ extension MainView {
                 Text(Date.now, format: .dateTime.weekday(.wide))
                     .font(.lexendRegCaption)
                     .foregroundColor(.secondary)
-                Text(Date.now, format: .dateTime.hour(.defaultDigits(amPM: .wide)).minute())
+                Text(vm.currentHoursAndMinutes)
                     .font(.lexendRegTitle)
                     .foregroundColor(.primary)
             }
@@ -102,12 +103,25 @@ extension MainView {
         ZStack {
             RoundedRectangle(cornerRadius: 14)
                 .fill(Color.beige.opacity(0.3))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 14)
+                        .stroke(vm.isRegistrationPlateEmpty ? .red : .clear, lineWidth: 3)
+                }
+                
             TextField("BG123AA", text: $regPlate)
                 .font(.lexendRegTitle)
                 .padding(.horizontal)
                 .multilineTextAlignment(.center)
+//                .onSubmit {
+//                    vm.updateRegistrationPlate(with: regPlate)
+//                }
+                .onChange(of: regPlate) { newRegPlate in
+                    vm.updateRegistrationPlate(with: newRegPlate)
+                    vm.checkIfRegPlateIsEmpty()
+                }
+            
         }
-        .frame(width: .infinity, height: 60)
+        .frame(height: 60)
     }
     
     private var cityPickerButton: some View {
@@ -140,7 +154,8 @@ extension MainView {
                     ZoneButtonView(title: zone.name,
                                    price: zone.price,
                                    color: zone.color,
-                                   zone: zone)
+                                   zone: zone,
+                                   number: zone.zoneNumber)
                 }
             }
                       .padding(.horizontal)

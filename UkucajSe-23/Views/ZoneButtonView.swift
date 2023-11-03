@@ -15,6 +15,7 @@ struct ZoneButtonView: View {
     let price: Int
     let color: Color
     let zone: ParkingZone
+    let number: String
     
     let size: CGFloat = UIScreen.main.bounds.width * 0.4
     
@@ -22,6 +23,11 @@ struct ZoneButtonView: View {
         
         Button {
             vm.selectParkingZone(parkingZone: zone)
+            vm.checkIfRegPlateIsEmpty()
+            vm.showMessageUI()
+            if vm.isRegistrationPlateEmpty {
+                Haptics.shared.notify(.error)
+            }
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 16)
@@ -68,6 +74,9 @@ struct ZoneButtonView: View {
             .frame(width: size, height: size)
 
         }
+        .sheet(isPresented: $vm.showMessage, onDismiss: nil) {
+            MessageSender(isShowingMessageView: $vm.showMessage, recipient: number, body: vm.registrationPlate)
+        }
         
         
     }
@@ -81,7 +90,8 @@ struct ZoneButtonView_Previews: PreviewProvider {
                        zone: ParkingZone(name: "II",
                                          zoneNumber: "123",
                                          price: 50,
-                                         color: .blue))
+                                         color: .blue),
+                                         number: "9999")
             .environmentObject(CityViewModel())
     }
 }

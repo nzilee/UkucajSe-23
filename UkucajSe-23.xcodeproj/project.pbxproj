@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9324AB362AEED35600CBCCB7 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9324AB352AEED35600CBCCB7 /* VisualEffectView.swift */; };
+		9324AB382AEF2F0500CBCCB7 /* MessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9324AB372AEF2F0500CBCCB7 /* MessageSender.swift */; };
 		933EE1FD2AE6F9480085C0BC /* LexendExa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 933EE1FC2AE6F9480085C0BC /* LexendExa-Regular.ttf */; };
 		933EE1FF2AE6F9640085C0BC /* LexendExa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 933EE1FE2AE6F9640085C0BC /* LexendExa-Medium.ttf */; };
 		933EE2012AE70B300085C0BC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933EE2002AE70B300085C0BC /* MainView.swift */; };
@@ -24,10 +25,12 @@
 		93C2B27B2AE6E7AA002F7BE8 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B27A2AE6E7AA002F7BE8 /* CityViewModel.swift */; };
 		93C2B27D2AE6F114002F7BE8 /* ZoneButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B27C2AE6F113002F7BE8 /* ZoneButtonView.swift */; };
 		93C2B27F2AE6F7DC002F7BE8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B27E2AE6F7DC002F7BE8 /* Fonts.swift */; };
+		93F4A77C2AEF48700086F9DD /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4A77B2AEF48700086F9DD /* Haptics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9324AB352AEED35600CBCCB7 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		9324AB372AEF2F0500CBCCB7 /* MessageSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSender.swift; sourceTree = "<group>"; };
 		933EE1FC2AE6F9480085C0BC /* LexendExa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendExa-Regular.ttf"; sourceTree = "<group>"; };
 		933EE1FE2AE6F9640085C0BC /* LexendExa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendExa-Medium.ttf"; sourceTree = "<group>"; };
 		933EE2002AE70B300085C0BC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		93C2B27A2AE6E7AA002F7BE8 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		93C2B27C2AE6F113002F7BE8 /* ZoneButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneButtonView.swift; sourceTree = "<group>"; };
 		93C2B27E2AE6F7DC002F7BE8 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		93F4A77B2AEF48700086F9DD /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9324AB342AEED31000CBCCB7 /* UIKitViews */ = {
+		9324AB342AEED31000CBCCB7 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9324AB372AEF2F0500CBCCB7 /* MessageSender.swift */,
 				9324AB352AEED35600CBCCB7 /* VisualEffectView.swift */,
+				93F4A77B2AEF48700086F9DD /* Haptics.swift */,
 			);
-			path = UIKitViews;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		933EE1FB2AE6F9350085C0BC /* Fonts */ = {
@@ -96,7 +102,6 @@
 		93C2B23F2AE3720A002F7BE8 /* UkucajSe-23 */ = {
 			isa = PBXGroup;
 			children = (
-				9324AB342AEED31000CBCCB7 /* UIKitViews */,
 				93C2B2502AE37292002F7BE8 /* Info.plist */,
 				93C2B2402AE3720A002F7BE8 /* UkucajSe_23App.swift */,
 				93C2B2422AE3720A002F7BE8 /* ContentView.swift */,
@@ -106,6 +111,7 @@
 				93C2B2582AE49A3F002F7BE8 /* Colors */,
 				933EE1FB2AE6F9350085C0BC /* Fonts */,
 				93C2B25B2AE49C62002F7BE8 /* Data */,
+				9324AB342AEED31000CBCCB7 /* UIKit */,
 				93C2B2442AE3720D002F7BE8 /* Assets.xcassets */,
 				93C2B2462AE3720D002F7BE8 /* Preview Content */,
 			);
@@ -246,7 +252,9 @@
 				93C2B2552AE4931D002F7BE8 /* City.swift in Sources */,
 				93C2B27B2AE6E7AA002F7BE8 /* CityViewModel.swift in Sources */,
 				936C3E622AEDCF960061E689 /* CityListView.swift in Sources */,
+				9324AB382AEF2F0500CBCCB7 /* MessageSender.swift in Sources */,
 				93C2B27F2AE6F7DC002F7BE8 /* Fonts.swift in Sources */,
+				93F4A77C2AEF48700086F9DD /* Haptics.swift in Sources */,
 				9324AB362AEED35600CBCCB7 /* VisualEffectView.swift in Sources */,
 				93C2B25D2AE49C79002F7BE8 /* CityParkingData.swift in Sources */,
 			);
