@@ -18,13 +18,24 @@ class CityViewModel: ObservableObject {
     @Published var currentHoursAndMinutes: String = Date.now.formatted(.dateTime.hour(.defaultDigits(amPM: .wide)).minute())
     
     @Published var showMessage: Bool = false
+    
+    
+    @Published var regPlate: RegistrationPlate
+    @Published var regPLATES: [RegistrationPlate]
+    
     @Published var registrationPlate: String = ""
     @Published var isRegistrationPlateEmpty: Bool = false
+    
+    @Published var parkingZoneNumber: String = ""
     
     init() {
         let cities = CityParkingData.shared.cities
         self.cities = cities
         self.city = cities[1]
+        
+        let platesData = CityParkingData.shared.regPlates_
+        self.regPLATES = platesData
+        self.regPlate = platesData[0]
     }
     
     func selectCity(city: City) {
@@ -33,6 +44,10 @@ class CityViewModel: ObservableObject {
     
     func selectParkingZone(parkingZone: ParkingZone) {
         self.parkingZone = parkingZone
+    }
+    
+    func setParkingZoneNumber(to number: String) {
+        self.parkingZoneNumber = number
     }
     
     func toggleCityList() {

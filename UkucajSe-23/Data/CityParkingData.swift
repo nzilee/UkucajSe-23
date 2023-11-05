@@ -65,4 +65,13 @@ class CityParkingData {
                                 color: .brightOrange)
                  ])
         ]
+    
+    
+    let regPlates_: [RegistrationPlate] = [
+        RegistrationPlate(mark: "NI314MP", image: "bmw"),
+        RegistrationPlate(mark: "BG887OL", image: "mercedes"),
+        RegistrationPlate(mark: "TT644UI", image: "volvo")
+    ]
+    
+    
 }

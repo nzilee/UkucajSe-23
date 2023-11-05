@@ -13,6 +13,8 @@ struct MainView: View {
     
     @State var regPlate: String = ""
     
+    @State var selectedTab = 0
+    
     let columns: [GridItem] = [
         GridItem(.adaptive(minimum: UIScreen.main.bounds.width * 0.4), spacing: UIScreen.main.bounds.width * 0.2),
         GridItem(.adaptive(minimum: UIScreen.main.bounds.width * 0.4), spacing: UIScreen.main.bounds.width * 0.2)
@@ -22,7 +24,10 @@ struct MainView: View {
         VStack(spacing: 20) {
             dayAndTime
             
-            regPlateTextField
+//            regPlateTextField
+            
+            RegistrationPlatePageView(selectedTab: selectedTab)
+                .allowsHitTesting(true)
             
             cityPickerButton
                        

@@ -24,6 +24,7 @@ struct ZoneButtonView: View {
         Button {
             vm.selectParkingZone(parkingZone: zone)
             vm.checkIfRegPlateIsEmpty()
+            vm.setParkingZoneNumber(to: number)
             vm.showMessageUI()
             if vm.isRegistrationPlateEmpty {
                 Haptics.shared.notify(.error)
@@ -65,20 +66,15 @@ struct ZoneButtonView: View {
                             .multilineTextAlignment(.center)
                             .foregroundColor(color)
                             .padding()
-                        
-                        
                     }
                     .padding([.horizontal, .bottom], 10)
                 }
             }
             .frame(width: size, height: size)
-
         }
         .sheet(isPresented: $vm.showMessage, onDismiss: nil) {
-            MessageSender(isShowingMessageView: $vm.showMessage, recipient: number, body: vm.registrationPlate)
+            MessageSender(isShowingMessageView: $vm.showMessage, recipient: vm.parkingZoneNumber, body: vm.registrationPlate)
         }
-        
-        
     }
 }
 
