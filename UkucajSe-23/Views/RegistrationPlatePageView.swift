@@ -27,11 +27,18 @@ struct RegistrationPlatePageView: View {
                             Text("regPlate: \(plate.mark)")
                         }
                 }
+                .padding(.horizontal)
             }
             .indexViewStyle(.page(backgroundDisplayMode: .never))
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         }
         .frame(height: UIScreen.main.bounds.height * 0.085)
+        .sheet(isPresented: $vm.showRegPlatesList, onDismiss: nil) {
+            RegistrationPlateListView()
+                .navigationBarTitle("", displayMode: .inline)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
+        }
     }
 }
 
@@ -76,6 +83,7 @@ struct RegPlateView: View {
             }
             .onAppear {
                 vm.updateRegistrationPlate(with: mark)
+                vm.checkIfRegPlateIsEmpty()
             }
         }
         .frame(height: 60)

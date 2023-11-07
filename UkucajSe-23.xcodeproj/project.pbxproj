@@ -16,6 +16,7 @@
 		935E048D2AF59609006BC36F /* RegistrationPlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935E048C2AF59609006BC36F /* RegistrationPlate.swift */; };
 		936C3E602AEC70210061E689 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936C3E5F2AEC70210061E689 /* MapView.swift */; };
 		936C3E622AEDCF960061E689 /* CityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936C3E612AEDCF950061E689 /* CityListView.swift */; };
+		93A40A022AF72FD600467BBE /* RegistrationPlateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A40A012AF72FD600467BBE /* RegistrationPlateListView.swift */; };
 		93C2B2412AE3720A002F7BE8 /* UkucajSe_23App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B2402AE3720A002F7BE8 /* UkucajSe_23App.swift */; };
 		93C2B2432AE3720A002F7BE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2B2422AE3720A002F7BE8 /* ContentView.swift */; };
 		93C2B2452AE3720D002F7BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C2B2442AE3720D002F7BE8 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		935E048C2AF59609006BC36F /* RegistrationPlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPlate.swift; sourceTree = "<group>"; };
 		936C3E5F2AEC70210061E689 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		936C3E612AEDCF950061E689 /* CityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListView.swift; sourceTree = "<group>"; };
+		93A40A012AF72FD600467BBE /* RegistrationPlateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPlateListView.swift; sourceTree = "<group>"; };
 		93C2B23D2AE3720A002F7BE8 /* UkucajSe-23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UkucajSe-23.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C2B2402AE3720A002F7BE8 /* UkucajSe_23App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkucajSe_23App.swift; sourceTree = "<group>"; };
 		93C2B2422AE3720A002F7BE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				936C3E5F2AEC70210061E689 /* MapView.swift */,
 				936C3E612AEDCF950061E689 /* CityListView.swift */,
 				935E04862AF59466006BC36F /* RegistrationPlatePageView.swift */,
+				93A40A012AF72FD600467BBE /* RegistrationPlateListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				93C2B2552AE4931D002F7BE8 /* City.swift in Sources */,
 				93C2B27B2AE6E7AA002F7BE8 /* CityViewModel.swift in Sources */,
 				936C3E622AEDCF960061E689 /* CityListView.swift in Sources */,
+				93A40A022AF72FD600467BBE /* RegistrationPlateListView.swift in Sources */,
 				9324AB382AEF2F0500CBCCB7 /* MessageSender.swift in Sources */,
 				93C2B27F2AE6F7DC002F7BE8 /* Fonts.swift in Sources */,
 				93F4A77C2AEF48700086F9DD /* Haptics.swift in Sources */,

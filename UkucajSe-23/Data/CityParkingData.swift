@@ -67,10 +67,16 @@ class CityParkingData {
         ]
     
     
-    let regPlates_: [RegistrationPlate] = [
+    var regPlates_: [RegistrationPlate] = [
         RegistrationPlate(mark: "NI314MP", image: "bmw"),
         RegistrationPlate(mark: "BG887OL", image: "mercedes"),
-        RegistrationPlate(mark: "TT644UI", image: "volvo")
+        RegistrationPlate(mark: "AC034UI", image: "volvo"),
+        RegistrationPlate(mark: "NI128OA", image: "bmw"),
+        RegistrationPlate(mark: "BG112IU", image: "volvo"),
+        RegistrationPlate(mark: "BP026ET", image: "mercedes"),
+        RegistrationPlate(mark: "GM099FP", image: "mercedes"),
+        RegistrationPlate(mark: "NS228JC", image: "volvo"),
+        RegistrationPlate(mark: "KG104SL", image: "bmw")
     ]
     
     

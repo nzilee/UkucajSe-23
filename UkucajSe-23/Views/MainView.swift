@@ -96,9 +96,13 @@ extension MainView {
                 Text(Image(systemName: "car"))
                     .font(.title2)
                     .foregroundColor(.brightPink.opacity(0.7))
-                Text(Image(systemName: "car.top.radiowaves.rear.right"))
-                    .font(.title2)
-                    .foregroundColor(.brightPink.opacity(0.7))
+                Button {
+                    vm.toggleRegPlatesList()
+                } label: {
+                    Text(Image(systemName: "list.triangle"))
+                        .font(.title2)
+                        .foregroundColor(.brightPink.opacity(0.7))
+                }
             }
         }
 //        .background(.orange)

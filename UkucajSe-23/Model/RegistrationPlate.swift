@@ -8,7 +8,7 @@
 import Foundation
 
 struct RegistrationPlate: Identifiable, Hashable {
-    let mark: String
+    var mark: String
     let image: String
     
     var id: String {

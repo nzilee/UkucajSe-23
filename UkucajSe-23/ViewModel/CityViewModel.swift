@@ -28,6 +28,8 @@ class CityViewModel: ObservableObject {
     
     @Published var parkingZoneNumber: String = ""
     
+    @Published var showRegPlatesList: Bool = false
+    
     init() {
         let cities = CityParkingData.shared.cities
         self.cities = cities
@@ -108,4 +110,13 @@ class CityViewModel: ObservableObject {
             }
         }
     }
+    
+    func toggleRegPlatesList() {
+        self.showRegPlatesList.toggle()
+    }
+    
+    func removePlateAt(_ index: IndexSet) {
+        regPLATES.remove(atOffsets: index)
+    }
+    
 }
