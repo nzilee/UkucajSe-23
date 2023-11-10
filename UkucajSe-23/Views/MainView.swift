@@ -149,7 +149,7 @@ extension MainView {
                 }
                 .padding(.leading)
             }
-            .frame(height: 60)
+            .frame(height: UIScreen.main.bounds.height * 0.075)
         }
     }
     

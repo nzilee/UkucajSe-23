@@ -15,24 +15,28 @@ struct RegistrationPlatePageView: View {
     
     @State var selectedTab: Int = 0
     
+    var sevenPercentDeviceHeight: CGFloat = UIScreen.main.bounds.height * 0.075
+    
     var body: some View {
         HStack {
             TabView(selection: $selectedTab) {
                 ForEach(vm.regPLATES) { plate in
                     RegPlateView(mark: plate.mark)
-                        .padding(.horizontal, vm.isRegistrationPlateEmpty ? 3 : 0)
+//                        .padding(.vertical, vm.isRegistrationPlateEmpty ? 18 : 0)
                         .allowsHitTesting(true)
                         .tag(plate.hashValue)
                         .tabItem {
                             Text("regPlate: \(plate.mark)")
                         }
+//                        .padding(.horizontal)
                 }
-                .padding(.horizontal)
+//                .padding(.horizontal)
             }
             .indexViewStyle(.page(backgroundDisplayMode: .never))
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         }
-        .frame(height: UIScreen.main.bounds.height * 0.085)
+        .frame(height: sevenPercentDeviceHeight)
+        .cornerRadius(14)
         .sheet(isPresented: $vm.showRegPlatesList, onDismiss: nil) {
             RegistrationPlateListView()
                 .navigationBarTitle("", displayMode: .inline)
@@ -45,7 +49,7 @@ struct RegistrationPlatePageView: View {
 struct RegistrationPlatePageView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationPlatePageView()
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
             .environmentObject(CityViewModel())
     }
 }
@@ -62,7 +66,7 @@ struct RegPlateView: View {
                 .fill(Color.beige.opacity(0.3))
                 .overlay {
                     RoundedRectangle(cornerRadius: 14)
-                        .stroke(vm.isRegistrationPlateEmpty ? .red : .clear, lineWidth: 3)
+                        .stroke(vm.isRegistrationPlateEmpty ? .red : .clear, lineWidth: 8)
                 }
                 
             VStack {
@@ -86,6 +90,7 @@ struct RegPlateView: View {
                 vm.checkIfRegPlateIsEmpty()
             }
         }
-        .frame(height: 60)
+        .frame(width: .infinity, height: UIScreen.main.bounds.height * 0.075)
+        
     }
 }
