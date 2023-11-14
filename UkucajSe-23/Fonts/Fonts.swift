@@ -29,6 +29,10 @@ extension Font {
         return .custom("LexendExa-Regular", size: 14, relativeTo: .footnote)
     }
     
+    static var lexendMedTitle: Font {
+        return .custom("LexendExa-Medium", size: 18, relativeTo: .title)
+    }
+    
     static var lexendMedTitle2: Font {
         return .custom("LexendExa-Medium", size: 16, relativeTo: .title2)
     }

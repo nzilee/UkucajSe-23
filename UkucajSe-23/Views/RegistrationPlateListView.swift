@@ -65,7 +65,7 @@ struct RegistrationPlateListView: View {
                     Button {
                         vm.toggleRegPlatesList()
                     } label: {
-                        Text("\(Image(systemName: "arrow.turn.up.left"))")
+                        Text("\(Image(systemName: "chevron.left"))")
                             .fontWeight(.semibold)
                     }
                 }

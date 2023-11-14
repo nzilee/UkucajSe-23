@@ -74,7 +74,7 @@ struct RegPlateView: View {
                     .font(.lexendRegTitle)
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
-                    .frame(width: UIScreen.main.bounds.width * 0.6)
+                    .frame(width: UIScreen.main.bounds.width * 0.75)
                 
                 Spacer()
                 
@@ -90,7 +90,7 @@ struct RegPlateView: View {
                 vm.checkIfRegPlateIsEmpty()
             }
         }
-        .frame(width: .infinity, height: UIScreen.main.bounds.height * 0.075)
+        .frame(height: UIScreen.main.bounds.height * 0.075)
         
     }
 }

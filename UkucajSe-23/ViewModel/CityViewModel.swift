@@ -30,6 +30,14 @@ class CityViewModel: ObservableObject {
     
     @Published var showRegPlatesList: Bool = false
     
+    @Published var showAddCarAlert: Bool = false
+    
+    @Published var carBRANDS: [CarBrand] = CityParkingData.shared.carBrands
+//    @Published var carBrand: CarBrand
+    
+    
+    @Published var regPLATESisEmpty: Bool = false
+    
     init() {
         let cities = CityParkingData.shared.cities
         self.cities = cities
@@ -66,18 +74,17 @@ class CityViewModel: ObservableObject {
     }
     
     func getCurrentHourAndMinute(){
-        
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             self.currentHoursAndMinutes = Date.now.formatted(.dateTime.hour(.defaultDigits(amPM: .wide)).minute())
         }
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-//            self.currentHoursAndMinutes = currentHourAndMinute
-//
-//            if !self.stop {
-//                self.getCurrentHourAndMinute()
-//            }
-//        }
+    }
+    
+    
+    func getCurrentWeekday() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.autoupdatingCurrent
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: Date())
     }
     
     func showMessageUI() {
@@ -117,6 +124,20 @@ class CityViewModel: ObservableObject {
     
     func removePlateAt(_ index: IndexSet) {
         regPLATES.remove(atOffsets: index)
+        
+        if regPLATES.isEmpty { self.regPLATESisEmpty = true }
+        
+    }
+    
+    func toggleAddCarAlert() {
+        withAnimation(.easeInOut(duration: 1)) {
+            self.showAddCarAlert.toggle()
+        }
+        
+    }
+    
+    func selectCarBrand(brand: CarBrand) {
+//        self.carBrand = brand
     }
     
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9324AB362AEED35600CBCCB7 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9324AB352AEED35600CBCCB7 /* VisualEffectView.swift */; };
 		9324AB382AEF2F0500CBCCB7 /* MessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9324AB372AEF2F0500CBCCB7 /* MessageSender.swift */; };
+		9335B1892AFECFFE0069F912 /* CarBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9335B1882AFECFFE0069F912 /* CarBrand.swift */; };
+		9335B18B2AFED4FC0069F912 /* AddCarAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9335B18A2AFED4FC0069F912 /* AddCarAlertView.swift */; };
 		933EE1FD2AE6F9480085C0BC /* LexendExa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 933EE1FC2AE6F9480085C0BC /* LexendExa-Regular.ttf */; };
 		933EE1FF2AE6F9640085C0BC /* LexendExa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 933EE1FE2AE6F9640085C0BC /* LexendExa-Medium.ttf */; };
 		933EE2012AE70B300085C0BC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933EE2002AE70B300085C0BC /* MainView.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		9324AB352AEED35600CBCCB7 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		9324AB372AEF2F0500CBCCB7 /* MessageSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSender.swift; sourceTree = "<group>"; };
+		9335B1882AFECFFE0069F912 /* CarBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrand.swift; sourceTree = "<group>"; };
+		9335B18A2AFED4FC0069F912 /* AddCarAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarAlertView.swift; sourceTree = "<group>"; };
 		933EE1FC2AE6F9480085C0BC /* LexendExa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendExa-Regular.ttf"; sourceTree = "<group>"; };
 		933EE1FE2AE6F9640085C0BC /* LexendExa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendExa-Medium.ttf"; sourceTree = "<group>"; };
 		933EE2002AE70B300085C0BC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				93C2B2542AE4931D002F7BE8 /* City.swift */,
 				93C2B2562AE49376002F7BE8 /* ParkingZone.swift */,
 				935E048C2AF59609006BC36F /* RegistrationPlate.swift */,
+				9335B1882AFECFFE0069F912 /* CarBrand.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				936C3E612AEDCF950061E689 /* CityListView.swift */,
 				935E04862AF59466006BC36F /* RegistrationPlatePageView.swift */,
 				93A40A012AF72FD600467BBE /* RegistrationPlateListView.swift */,
+				9335B18A2AFED4FC0069F912 /* AddCarAlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			files = (
 				93C2B2572AE49376002F7BE8 /* ParkingZone.swift in Sources */,
 				935E048D2AF59609006BC36F /* RegistrationPlate.swift in Sources */,
+				9335B1892AFECFFE0069F912 /* CarBrand.swift in Sources */,
 				93C2B25A2AE49A4E002F7BE8 /* Colors.swift in Sources */,
 				93C2B27D2AE6F114002F7BE8 /* ZoneButtonView.swift in Sources */,
 				935E04872AF59466006BC36F /* RegistrationPlatePageView.swift in Sources */,
@@ -264,6 +271,7 @@
 				93C2B27B2AE6E7AA002F7BE8 /* CityViewModel.swift in Sources */,
 				936C3E622AEDCF960061E689 /* CityListView.swift in Sources */,
 				93A40A022AF72FD600467BBE /* RegistrationPlateListView.swift in Sources */,
+				9335B18B2AFED4FC0069F912 /* AddCarAlertView.swift in Sources */,
 				9324AB382AEF2F0500CBCCB7 /* MessageSender.swift in Sources */,
 				93C2B27F2AE6F7DC002F7BE8 /* Fonts.swift in Sources */,
 				93F4A77C2AEF48700086F9DD /* Haptics.swift in Sources */,

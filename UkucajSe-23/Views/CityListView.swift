@@ -12,17 +12,42 @@ struct CityListView: View {
     @EnvironmentObject var vm: CityViewModel
     
     var body: some View {
-        List(vm.cities) { city in
-            Button {
-                vm.city = city
-                vm.showCityList = false
-            } label: {
-                listRowView(city: city)
+        NavigationView {
+            VStack {
+                List(vm.cities) { city in
+                    Button {
+                        vm.city = city
+                        vm.showCityList = false
+                    } label: {
+                        listRowView(city: city)
+                    }
+                    .padding(.vertical, 4)
+                    .listRowBackground(Color.clear)
+                }
+                .listStyle(.plain)
             }
-            .padding(.vertical, 4)
-            .listRowBackground(Color.clear)
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("Gradovi")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        vm.showCityList = false
+                    } label: {
+                        Text("\(Image(systemName: "chevron.left"))")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.accentColor)
+                    }
+                }
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        RoundedRectangle(cornerRadius: 15, style: .continuous)
+                            .fill(Color.brightPink.opacity(0.3))
+                        .frame(width: UIScreen.main.bounds.width * 0.25, height: 8)
+                        Spacer()
+                    }
+                }
         }
-        .listStyle(.plain)
+        }
     }
 }
 

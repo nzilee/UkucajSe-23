@@ -21,36 +21,39 @@ struct MainView: View {
         ]
     
     var body: some View {
-        VStack(spacing: 20) {
-            dayAndTime
-            
-//            regPlateTextField
-            
-            RegistrationPlatePageView(selectedTab: selectedTab)
-                .allowsHitTesting(true)
-            
-            cityPickerButton
-                       
-            ZStack {
-                MapView()
+        ZStack {
+            VStack(spacing: 20) {
+                dayAndTime
+                
+    //            regPlateTextField
+                
+                RegistrationPlatePageView(selectedTab: selectedTab)
+                    .allowsHitTesting(true)
+                    .edgesIgnoringSafeArea(.horizontal)
+                
+                cityPickerButton
+                           
                 ZStack {
-                    
-                    if vm.showZoneButtons {
-//                        Color.gray
-//                            .opacity(0.6)
-//                            .blur(radius: 10)
-                        VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
-                    }
-                    
-                    VStack {
+                    MapView()
+                    ZStack {
+                        
                         if vm.showZoneButtons {
-                            zoneButtons
-                                .padding([.horizontal, .top])
+    //                        Color.gray
+    //                            .opacity(0.6)
+    //                            .blur(radius: 10)
+                            Color.clear.background(.ultraThinMaterial)
                         }
-                        Spacer()
-                        payParkingButton
-                            .padding(.horizontal)
-                        payManuallyButton
+                        
+                        VStack {
+                            if vm.showZoneButtons {
+                                zoneButtons
+                                    .padding([.horizontal, .top])
+                            }
+                            Spacer()
+                            payParkingButton
+                                .padding(.horizontal)
+                            payManuallyButton
+                        }
                     }
                 }
             }
@@ -140,7 +143,6 @@ extension MainView {
             ZStack {
                 RoundedRectangle(cornerRadius: 14)
                     .fill(Color.beige.opacity(0.3))
-                
                 HStack {
                     Text("\(Image(systemName: "mappin")) \(vm.city.name)")
                         .font(.lexendRegTitle2)
